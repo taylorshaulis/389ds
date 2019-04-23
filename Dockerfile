@@ -46,6 +46,5 @@ RUN mkdir -p /data/config && \
     ln -s /data/ssca /etc/dirsrv/ssca && \
     chown -R dirsrv /data
 
-USER dirsrv
 CMD ["/usr/sbin/dscontainer", "-r"]
 
