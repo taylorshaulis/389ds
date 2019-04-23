@@ -37,6 +37,8 @@ RUN dnf install -y 389-ds-base/dist/rpms/*389*.rpm && \
 # Create the example setup inf. It's valid for containers!
 # Build the instance from the new installer tools.
 
+COPY dscontainer /usr/sbin/dscontainer
+
 EXPOSE 3389 3636
 RUN mkdir -p /data/config && \
     mkdir -p /data/ssca && \
