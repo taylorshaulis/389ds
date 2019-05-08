@@ -175,7 +175,7 @@ def begin_magic():
     # Yep! Run it ...
     # Now unlike a normal lib389 start, we use subprocess and don't fork!
     # TODO: Should we pass in a loglevel from env?
-    l#og.info("Starting 389-ds-container ...")
+    #log.info("Starting 389-ds-container ...")
 
     # myCmd = '/usr/sbin/ns-slapd -D /etc/dirsrv/slapd-localhost -i /var/run/dirsrv/slapd-localhost.pid'
     # os.system(myCmd)
