@@ -48,5 +48,6 @@ RUN mkdir -p /data/config && \
     ln -s /data/ssca /etc/dirsrv/ssca && \
     chown -R dirsrv /data
 
-CMD ["/usr/sbin/dscontainer", "-r"]
+#CMD ["/usr/sbin/dscontainer", "-r"]
+CMD ["/usr/sbin/ns-slapd", "-d", "0", "-D", "/etc/dirsrv/slapd-localhost", "-i", "/var/run/dirsrv/slapd-localhost.pid"]
 
