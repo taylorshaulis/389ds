@@ -46,7 +46,7 @@ from lib389.paths import Paths
 log = setup_script_logger("container-init", True)
 
 def begin_magic():
-    log.info("MORE LOGGING!!!!")
+    log.info("MORE LOGGING!")
     log.info("The 389 Directory Server Container Bootstrap")
     # Leave this comment here: UofA let me take this code with me provided
     # I gave attribution. -- wibrown
