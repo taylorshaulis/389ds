@@ -191,26 +191,27 @@ def begin_magic():
 
     # To make sure we really do shutdown, we actually re-block on the proc
     # again here to be sure it's done.
-    def kill_ds():
-        if ds_proc is None:
-            pass
-        else:
-            try:
-                os.kill(ds_proc.pid, signal.SIGTERM)
-            except ProcessLookupError:
-                # It's already gone ...
-                pass
-        log.info("STOPPING: Shutting down 389-ds-container ...")
-        ds_proc.wait()
+    # def kill_ds():
+    #     if ds_proc is None:
+    #         pass
+    #     else:
+    #         try:
+    #             os.kill(ds_proc.pid, signal.SIGTERM)
+    #         except ProcessLookupError:
+    #             # It's already gone ...
+    #             pass
+    #     log.info("STOPPING: Shutting down 389-ds-container ...")
+    #     ds_proc.wait()
 
-    atexit.register(kill_ds)
+    # atexit.register(kill_ds)
 
-    # Now wait ...
-    try:
-        ds_proc.wait()
-    except KeyboardInterrupt:
-        pass
+    # # Now wait ...
+    # try:
+    #     ds_proc.wait()
+    # except KeyboardInterrupt:
+    #     pass
     # THE LETTER OF THE DAY IS C AND THE NUMBER IS 10
+    exit(0)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(allow_abbrev=True, description="""
