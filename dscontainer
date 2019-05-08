@@ -108,9 +108,11 @@ def begin_magic():
     if not os.path.exists('/data/config/container.inf'):
         # Nope? Make one ...
         log.info("Initialising 389-ds-container due to empty volume ...")
-
+        if "ROOTSEED" in os.environ:
+            rpw = os.environ['ROOTSEED']
+        else:
+            rpw = password_generate()
         #check if root
-        rpw = password_generate()
 
         g2b = General2Base(log)
         s2b = Slapd2Base(log)
