@@ -162,7 +162,7 @@ def begin_magic():
         log.info("IMPORTANT: Set cn=Directory Manager password to \"%s\"" % rpw)
         
     #if the lock file exists delete it
-    if not os.path.exists('/data/run/lock/server/1'):
+    if os.path.exists('/data/run/lock/server/1'):
         os.remove('/data/run/lock/server/1')
         
     # Create the marker to say we exist. This is also a good writable permissions
